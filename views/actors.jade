@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  p !{foobar}
+  each item,i in items
+    li= i
+    li= item.title
+    img(src=img)
+    a(href="/actors/"+i) clicky my face
