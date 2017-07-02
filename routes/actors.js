@@ -15,7 +15,7 @@ router.get('/', function (req, res, next) {
             const items = jsonQuery.query(result, '$..item')[0];
             
             res.render('actors', {
-                title: 'All actors',
+                title: 'Actors',
                 items: items,
                 foobar: '<b>this text is html and bold</b>',
                 img: 'https://professionaldee.files.wordpress.com/2015/01/capture1.png'
