@@ -34,12 +34,16 @@ router.get('/:id', function (req, res, next) {
             const $ = cheerio.load(item['content:encoded'][0]);
             const filmTable = $.html('table#filmTable');
             const theatreTable = $.html('table#theatreTable');
+            const profileDetails = $.html('div#profileDetails');
+            const training = $.html('div#training');
             
             res.render('actor', {
-                title: 'Single Actor',
+                title: 'Actor Profile',
+                item: item,
+                profileDetails: profileDetails,
                 filmTable: filmTable,
                 theatreTable: theatreTable,
-                item: item,
+                training: training,
                 img: 'https://professionaldee.files.wordpress.com/2015/01/capture1.png'
             });
         });
