@@ -1,14 +1,33 @@
 extends layout
 
 block content
-  h1 #{item.title}
+  
+  //- link(rel="stylesheet", type="text/css", href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.css")
+  
+  style.
+    .leftPadding--none li {
+      padding-left: 10px !important;
+    }
+  
+  h2 #{item.title}
+  br
   div.row
     div.col-md-6
-      img(src=img)
-    div.col-md-6     
+      img(src=profilePicture)
+    div.col-md-5     
       !{profileDetails}
+  h5
+    strong Film/Television
   !{filmTable}
+  br
+  h5
+    strong Theatre
   !{theatreTable}
-  !{training}
+  br
+  h5
+    strong Training and Education
+  div.leftPadding--none !{training}
 
+  //- script(type="text/javascript", charset="utf8", src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.js")
   script(src="/javascripts/actor.js")
+

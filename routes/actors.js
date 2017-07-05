@@ -16,9 +16,7 @@ router.get('/', function (req, res, next) {
             
             res.render('actors', {
                 title: 'Actors',
-                items: items,
-                foobar: '<b>this text is html and bold</b>',
-                img: 'https://professionaldee.files.wordpress.com/2015/01/capture1.png'
+                items: items
             });
         });
     });
@@ -31,20 +29,21 @@ router.get('/:id', function (req, res, next) {
             if (err) throw err;
             
             const item = jsonQuery.query(rssToJsonResult, '$..item')[0][parseInt(req.params.id)];
+            const profilePicture = item['media:content'][0].$.url;
             const $ = cheerio.load(item['content:encoded'][0]);
             const filmTable = $.html('table#filmTable');
             const theatreTable = $.html('table#theatreTable');
             const profileDetails = $.html('div#profileDetails');
             const training = $.html('div#training');
             
-            res.render('actor', {
+            res.render('actor', { 
                 title: 'Actor Profile',
                 item: item,
+                profilePicture: profilePicture,
                 profileDetails: profileDetails,
                 filmTable: filmTable,
                 theatreTable: theatreTable,
                 training: training,
-                img: 'https://professionaldee.files.wordpress.com/2015/01/capture1.png'
             });
         });
     });
