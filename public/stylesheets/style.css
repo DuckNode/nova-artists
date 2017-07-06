@@ -1,8 +1,78 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
 
+html {
+    overflow-y: scroll; 
+}
+body {
+  
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0;
+ 
+ 
+}
 a {
   color: #00B7FF;
+}
+.navbar {
+  border: none;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+/* --- navbar sizes --- */
+/* --- navbar colors --- */
+}
+.navbar-brand {
+  font-size: 2.25rem;
+  font-weight: 900;
+  color: #ffffff;
+}
+.navbar--size--xl {
+  padding: 4rem 0;
+}
+.navbar--size--lg {
+  padding: 2rem 0;
+}
+.navbar--size--md{
+  padding: 1rem 0;
+}
+/*
+.navbar #logo{
+    width: 50%;
+    height: 50%;
+}*/
+.navbar--size--sm {
+  padding: 0;
+}
+.navbar--color--white {
+  background: #fff;
+}
+.navbar--color--primary {
+  background: #37ca7e;
+}
+.navbar--color--secondary {
+  background : #AEACAF;
+ opacity: 0.95;
+}
+.navbar--color--ghost {
+  background: rgba(0,0,0,0.05);
+}
+.navbar--color--ghost .navbar-brand,
+.navbar--color--ghost .navbar-text,
+.navbar--color--ghost a {
+  color: #fff;
+    
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  z-index: -2;
+  background: url(../img/film-reels.jpg) center top/cover no-repeat;
+}
+.overlay {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  
 }
