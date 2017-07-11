@@ -13,7 +13,7 @@ router.get('/', function (req, res, next) {
             if (err) throw err;
 
             const items = jsonQuery.query(result, '$..item')[0];
-            
+
             res.render('actors', {
                 title: 'Actors',
                 items: items
@@ -27,7 +27,7 @@ router.get('/:id', function (req, res, next) {
         if (err) throw err;
         convertXMLtoJSON(data, function (err, rssToJsonResult) {
             if (err) throw err;
-            
+
             const item = jsonQuery.query(rssToJsonResult, '$..item')[0][parseInt(req.params.id)];
             const profilePicture = item['media:content'][0].$.url;
             const $ = cheerio.load(item['content:encoded'][0]);
@@ -35,8 +35,8 @@ router.get('/:id', function (req, res, next) {
             const theatreTable = $.html('table#theatreTable');
             const profileDetails = $.html('div#profileDetails');
             const training = $.html('div#training');
-            
-            res.render('actor', { 
+
+            res.render('actor', {
                 title: 'Actor Profile',
                 item: item,
                 profilePicture: profilePicture,

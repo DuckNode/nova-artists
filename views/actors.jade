@@ -2,14 +2,9 @@ extends layout
 
 block content
   h1= title
-  //- each item,i in items
-  //-   .responsive
-  //-     .gallery
-  //-       a(href="/actors/"+i) 
-  //-         img(src=item['media:content'][0].$.url)
-  //-       .desc= item.title
   .row
     each item,i in items
-        .col-xxs-6.col-xs-12.col-sm-3.col-md-3.col-lg-2
-          a(href="/actors/"+i) 
-            img(id="img-max" src=item['media:content'][0].$.url).img-responsive
+        .col-xs-6.col-sm-3.col-md-2.col-lg-2
+          a(href="/actors/"+i style="text-decoration: none;")
+            img(src=item['media:content'][0].$.url).img-responsive.img-max
+            div.desc= item.title

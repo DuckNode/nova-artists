@@ -47,11 +47,15 @@ setInterval(function () {
       // user has scrolled > 100px from top since last check
       if (!scrolledPast) {
         switchInto();
+        $("#menu").removeClass("hide");
+        $("#menu-button").removeClass("hide");
       }
     } else {
       // user has scrolled back <= 100px from top since last check
       if (scrolledPast) {
         switchStart();
+        $("#menu").addClass("hide");        
+        $("#menu-button").addClass("hide");        
       }
     }
   }
