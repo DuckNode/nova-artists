@@ -8,8 +8,26 @@ html
     link(href="/stylesheets/style.css", rel="stylesheet")  
     link(href="https://fonts.googleapis.com/css?family=Schoolbell|Ubuntu", rel="stylesheet")
     script(src='https://code.jquery.com/jquery-3.2.1.min.js', integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=', crossorigin='anonymous')
-    link(href="https://fonts.googleapis.com/css?family=Schoolbell|Ubuntu", rel="stylesheet")
   body
+    nav(style="position: relative; margin-bottom: 0px;").navbar.navbar-fixed-top.navbar--color--secondary.navbar--size--md
+      .container-fluid
+        .navbar-header(style='width: 100% !important;')
+          button#menu-button.navbar-toggle.collapsed.hide(type='button', data-toggle='collapse', data-target='#menu')
+            span.sr-only Toggle navigation
+            .btn.btn-primary Menu
+          .row
+            .col-xs-6.col-sm-3
+              img#logo.img-responsive(alt='logo', src='img/Nova.png')
+            #menu.col-xs-12.col-sm-9.collapse.navbar-collapse.hide(style='padding-top:25px')
+              ul.nav.navbar-nav
+                li
+                  a(href='#') About
+                li
+                  a(href='#') Male Actors
+                li
+                  a(href='#') Female Actors
+                li
+                  a(href='#') Contact
     .container-fluid
       block content
     footer
