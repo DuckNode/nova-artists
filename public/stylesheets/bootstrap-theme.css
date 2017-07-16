@@ -28,6 +28,17 @@ div.desc {
   background-color: #1d1e1f;
 }
 
+.btn-primary,
+.btn-primary:active:hover,
+.open > .dropdown-toggle.btn-primary:focus {
+  background-color: #b53537;
+  border-color: #b53537;
+}
+
+.btn-primary:hover {
+  background-color: #b44c4b;
+  border-color: #b44c4b;
+}
 
 
 /*.col-xxs-1, .col-xxs-2, .col-xxs-3, .col-xxs-4, .col-xxs-5, .col-xxs-6, .col-xxs-7, .col-xxs-8, .col-xxs-9, .col-xxs-10, .col-xxs-11, .col-xxs-12 {
