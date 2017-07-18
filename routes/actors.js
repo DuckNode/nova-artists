@@ -12,7 +12,13 @@ router.get('/', function (req, res, next) {
         convertXMLtoJSON(data, function (err, result) {
             if (err) throw err;
 
-            const items = jsonQuery.query(result, '$..item')[0];
+            let items;
+            if (req.query.category) {
+                items = jsonQuery.query(result, '$..item[?(@.category=="' + req.query.category + '")]');
+            }
+            else {
+                items = jsonQuery.query(result, '$..item')[0];
+            }
 
             res.render('actors', {
                 title: 'Actors',

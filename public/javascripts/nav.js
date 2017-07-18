@@ -4,6 +4,8 @@
 var navBar = $(".navbar"),
     data = navBar.data();
 
+var logo = $("#logo");
+
 // booleans used to tame the scroll event listening a little..
 var scrolling = false,
     scrolledPast = false;
@@ -17,6 +19,8 @@ function switchInto() {
   navBar.removeClass(data.startsize);
   navBar.addClass(data.intocolor);
   navBar.addClass(data.intosize);
+  logo.removeClass('logo--lg');
+  logo.addClass('logo--sm');
   console.log("into transition triggered!");
 }
 
@@ -29,6 +33,8 @@ function switchStart() {
   navBar.addClass(data.startsize);
   navBar.removeClass(data.intocolor);
   navBar.removeClass(data.intosize);
+  logo.removeClass('logo--sm');
+  logo.addClass('logo--lg');
   console.log("start transition triggered!");
 }
 
