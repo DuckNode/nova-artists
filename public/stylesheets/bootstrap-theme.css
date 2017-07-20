@@ -3,6 +3,11 @@
   height: auto;
 }
 
+.img-corners-round {
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+
 .navbar-toggle {
   margin-right: 0;
 }
@@ -19,6 +24,8 @@ nav .row {
 
 div.desc {
   padding: 10px 25px 8px 25px;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
   font-size: 12px;
   font-weight: bold;
   line-height: 15px;
@@ -39,7 +46,6 @@ div.desc {
   background-color: #b44c4b;
   border-color: #b44c4b;
 }
-
 
 /*.col-xxs-1, .col-xxs-2, .col-xxs-3, .col-xxs-4, .col-xxs-5, .col-xxs-6, .col-xxs-7, .col-xxs-8, .col-xxs-9, .col-xxs-10, .col-xxs-11, .col-xxs-12 {
   position: relative;

@@ -2,13 +2,13 @@
 
 // grabbing the class names from the data attributes
 var navBar = $(".navbar"),
-    data = navBar.data();
+  data = navBar.data();
 
 var logo = $("#logo");
 
 // booleans used to tame the scroll event listening a little..
 var scrolling = false,
-    scrolledPast = false;
+  scrolledPast = false;
 
 // transition Into
 function switchInto() {
@@ -43,6 +43,12 @@ $(window).scroll(function () {
   return scrolling = true;
 });
 
+$(document).ready(function () {
+  $('.navbar--autoScroll').click(function () {
+    $('html, body').animate({ scrollTop: 100 });
+  });
+});
+
 setInterval(function () {
   // when `scrolling` becomes true...
   if (scrolling) {
@@ -60,8 +66,8 @@ setInterval(function () {
       // user has scrolled back <= 100px from top since last check
       if (scrolledPast) {
         switchStart();
-        $("#menu").addClass("hide");        
-        $("#menu-button").addClass("hide");        
+        $("#menu").addClass("hide");
+        $("#menu-button").addClass("hide");
       }
     }
   }

@@ -109,6 +109,10 @@ font-size: 10pt;
   color: #fff;
 }
 
+#menu a.active {
+  color: #b53537;
+}
+
 .hero {
   position: relative;
   height: 100vh;
