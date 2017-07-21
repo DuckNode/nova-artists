@@ -1,9 +1,10 @@
 extends layout
 
 block content
-  div#gallery.row
-    each item,i in items
-        .col-xs-6.col-sm-3.col-md-2.col-lg-2
-          a(href="/actors/"+i style="text-decoration: none;")
-            img(src=item['media:content'][0].$.url).img-responsive.img-max.img-corners-round
-            div.desc= item.title
+  .container-fluid
+    div#gallery.row
+      each item,i in items
+          .col-xs-6.col-sm-3.col-md-2.col-lg-2
+            a(href="/actors/"+i style="text-decoration: none;")
+              img(src=item['media:content'][0].$.url).img-responsive.img-max.img-corners-round
+              div.desc= item.title
