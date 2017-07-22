@@ -19,9 +19,9 @@ router.get('/', function (req, res, next) {
             else {
                 items = jsonQuery.query(result, '$..item')[0];
             }
-
+console.log(req.query.category.charAt(0).toUpperCase() + req.query.category.slice(1) + ' Actors')
             res.render('actors', {
-                title: 'Actors',
+                title: req.query.category.charAt(0).toUpperCase() + req.query.category.slice(1) + ' Actors',
                 items: items
             });
         });

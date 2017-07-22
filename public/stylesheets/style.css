@@ -138,5 +138,6 @@ font-size: 10pt;
   }
 }
 
-
-
+.margin__top--none {
+  margin-top: 0;
+}
