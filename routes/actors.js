@@ -19,7 +19,7 @@ router.get('/', function (req, res, next) {
             else {
                 items = jsonQuery.query(result, '$..item')[0];
             }
-console.log(req.query.category.charAt(0).toUpperCase() + req.query.category.slice(1) + ' Actors')
+
             res.render('actors', {
                 title: req.query.category.charAt(0).toUpperCase() + req.query.category.slice(1) + ' Actors',
                 items: items
@@ -43,7 +43,7 @@ router.get('/:id', function (req, res, next) {
             const training = $.html('div#training');
 
             res.render('actor', {
-                title: 'Actor Profile',
+                title: item.category[0].charAt(0).toUpperCase() + item.category[0].slice(1) + ' Actors',
                 item: item,
                 profilePicture: profilePicture,
                 profileDetails: profileDetails,
