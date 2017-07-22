@@ -1,6 +1,7 @@
 doctype html
 html
   head
+    title= title.toLowerCase()
     meta(http-equiv="Content-Type" content="text/html; charset=UTF-8")
     meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no")
     link(href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cosmo/bootstrap.min.css", rel="stylesheet", integrity="sha384-h21C2fcDk/eFsW9sC9h0dhokq5pDinLNklTKoxIZRUn3+hvmgQSffLLQ4G4l2eEr", crossorigin="anonymous")  
@@ -34,11 +35,15 @@ html
       br
       div.row
         div.col-xs-12.col-sm-4
-          a.socialmedia
-            img(alt="Facebook" src="/img/Facebook.png")
-            img(alt="Twitter" src="/img/Twitter.png" href="https://twitter.com/nova_artists")
-            img(alt="Instagram" src="/img/Instagram.png")
-            img(alt="Snapchat" src="/img/Snapchat.png")
+          div.socialmedia
+            a
+              img(alt="Facebook" src="/img/Facebook.png")
+            a
+              img(alt="Twitter" src="/img/Twitter.png" href="https://twitter.com/nova_artists")
+            a
+              img(alt="Instagram" src="/img/Instagram.png")
+            a
+              img(alt="Snapchat" src="/img/Snapchat.png")
         div.col-xs-12.col-sm-4        
           p.footertext Lovingly created by 
             a#MAMD me and my Duck &copy;
