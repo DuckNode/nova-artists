@@ -14,7 +14,7 @@ router.get('/', function (req, res, next) {
 
             let items;
             if (req.query.category) {
-                items = jsonQuery.query(result, '$..item[?(@.category=="' + req.query.category + '")]');
+                items = jsonQuery.query(result, '$..item[?(@.category=="' + req.query.category + '")]').sort(compareAlphabetically);
             }
             else {
                 items = jsonQuery.query(result, '$..item')[0];
@@ -22,7 +22,8 @@ router.get('/', function (req, res, next) {
 
             res.render('actors', {
                 title: req.query.category.charAt(0).toUpperCase() + req.query.category.slice(1) + ' Actors',
-                items: items
+                items: items,
+                category: req.query.category
             });
         });
     });
@@ -34,7 +35,16 @@ router.get('/:id', function (req, res, next) {
         convertXMLtoJSON(data, function (err, rssToJsonResult) {
             if (err) throw err;
 
-            const item = jsonQuery.query(rssToJsonResult, '$..item')[0][parseInt(req.params.id)];
+            let item;
+            if (req.query.category) {
+                const items = jsonQuery.query(rssToJsonResult, '$..item[?(@.category== "' + req.query.category + '")]').sort(compareAlphabetically);
+                item = items[parseInt(req.params.id)];
+            }
+            else {
+                const items = jsonQuery.query(rssToJsonResult, '$..item');
+                item = items[parseInt(req.params.id)];
+            }
+
             const profilePicture = item['media:content'][0].$.url;
             const $ = cheerio.load(item['content:encoded'][0]);
             const filmTable = $.html('table#filmTable');
@@ -54,5 +64,20 @@ router.get('/:id', function (req, res, next) {
         });
     });
 });
+
+function compareAlphabetically(a, b) {
+    const namesA = a.title[0].split(' ');
+    const namesB = b.title[0].split(' ');
+    const surnameA = namesA[namesA.length - 1].toUpperCase();
+    const surnameB = namesB[namesB.length - 1].toUpperCase();
+    if (surnameA < surnameB) {
+        return -1;
+    }
+    if (surnameA > surnameB) {
+        return 1;
+    }
+    // names must be equal
+    return 0;
+}
 
 module.exports = router;

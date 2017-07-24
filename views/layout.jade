@@ -8,6 +8,8 @@ html
     link(href="/stylesheets/bootstrap-theme.css", rel="stylesheet")  
     link(href="/stylesheets/style.css", rel="stylesheet")  
     link(href="https://fonts.googleapis.com/css?family=Schoolbell|Ubuntu", rel="stylesheet")
+    //- Custom styles for this template
+    link(href="/stylesheets/sticky-footer.css", rel="stylesheet")
     //- script(src='https://code.jquery.com/jquery-3.2.1.min.js', integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=', crossorigin='anonymous')
     script(src="https://code.jquery.com/jquery-1.12.4.js", integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=", crossorigin="anonymous")
   body
@@ -32,23 +34,24 @@ html
                   a(href='#') Contact
     .navbar__spacer
     block content
-    footer
-      div.br--sm
-      div.br--sm
-      div.br--sm      
-      div.row
-        div.col-xs-12.col-sm-4
-          div.socialmedia
-            a
-              img(alt="Facebook" src="/img/Facebook.png")
-            a
-              img(alt="Twitter" src="/img/Twitter.png" href="https://twitter.com/nova_artists")
-            a
-              img(alt="Instagram" src="/img/Instagram.png")
-            a
-              img(alt="Snapchat" src="/img/Snapchat.png")
-        div.col-xs-12.col-sm-4        
-          p.footertext Lovingly created by 
-            a#MAMD me and my Duck &copy;
-            |  Design
-      script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa', crossorigin='anonymous')
+    footer.footer
+      div.container
+        div.br--sm
+        div.br--sm
+        div.br--sm      
+        div.row
+          div.col-xs-12.col-sm-4
+            div.socialmedia
+              a
+                img(alt="Facebook" src="/img/Facebook.png")
+              a
+                img(alt="Twitter" src="/img/Twitter.png" href="https://twitter.com/nova_artists")
+              a
+                img(alt="Instagram" src="/img/Instagram.png")
+              a
+                img(alt="Snapchat" src="/img/Snapchat.png")
+          div.col-xs-12.col-sm-6.col-md-5.col-lg-4       
+            p.footertext Lovingly created by 
+              a#MAMD me and my Duck &copy;
+              |  Design
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa', crossorigin='anonymous')
