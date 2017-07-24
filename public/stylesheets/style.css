@@ -189,6 +189,22 @@ footer {
   white-space: normal;
 }
 
+table#filmTable.dataTable.dtr-inline.collapsed > tbody > tr > td:first-child:before,
+table#filmTable.dataTable.dtr-inline.collapsed > tbody > tr > th:first-child:before {
+  font-family: "Glyphicons Halflings"; 
+  content: "\2b";
+  top: 11px;
+  color: #b84340;
+  border: none;
+  background-color: transparent;
+  box-shadow: none;
+}
+table#filmTable.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before,
+table#filmTable.dataTable.dtr-inline.collapsed > tbody > tr.parent > th:first-child:before {
+  content: "\2212";
+  background-color: transparent;
+}
+
 .br--sm {
   height: 12px;
 }
