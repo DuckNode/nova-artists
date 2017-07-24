@@ -12,6 +12,21 @@ h1{
     font-size: 21pt;
     font-weight: 600;
 }
+
+.twitterFeed {
+  margin-top: 11px;
+}
+
+/* @media only screen and (max-width: 768px) {
+  .twitterFeed {
+    border-top: 1px solid rgba(15, 70, 100, 0.12);
+  }
+} */
+
+.timeline-Header {
+  padding-left: 0px;
+}
+
 #bodyText{
     padding-bottom: 10%;
 }
@@ -39,7 +54,7 @@ footer {
   font-size: 13.9pt;
   cursor: pointer;
 }
-#MAMD:hover {
+#MAMD:hover, .hyperlink:hover {
   text-decoration: none;
   color: #b53537;
 }
@@ -83,11 +98,23 @@ footer {
    transition: height 0.4s;
   -webkit-transition: height 0.4s;
 }
+
 .navbar #logo.logo--sm {
+  padding-top:10px;
   height: 70px;
-   transition: height 0.4s;
+  transition: height 0.4s;
   -webkit-transition: height 0.4s;
 }
+
+@media only screen and (min-width: 768px) {
+  .navbar #logo.logo--sm {
+    padding-top: 0;
+    height: 70px;
+    transition: height 0.4s;
+    -webkit-transition: height 0.4s;
+  }
+}
+
 .navbar--color--white {
   background: #fff;
 }
@@ -148,5 +175,20 @@ footer {
 }
 
 .margin__top--none {
-  margin-top: 0;
+  margin-top: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+  .margin__top--none {
+    margin-top: 0;
+  }
+}
+
+/* wrap text in datatables responsive child rows  */
+#filmTable .child * {
+  white-space: normal;
+}
+
+.br--sm {
+  height: 12px;
 }

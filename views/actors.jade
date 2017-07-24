@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  br
+  div.br--sm
   .container
     div#gallery.row
       each item,i in items
@@ -9,5 +9,4 @@ block content
             a(href="/actors/"+i style="text-decoration: none;")
               img(src=item['media:content'][0].$.url).img-responsive.img-max.img-corners-round
               div.desc= item.title.toString().toLowerCase().replace(/(^| )(\w)/g, s => s.toUpperCase())
-  br
-  br
+  
