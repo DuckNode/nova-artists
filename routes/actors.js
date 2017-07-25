@@ -17,7 +17,7 @@ router.get('/', function (req, res, next) {
                 items = jsonQuery.query(result, '$..item[?(@.category=="' + req.query.category + '")]').sort(compareAlphabetically);
             }
             else {
-                items = jsonQuery.query(result, '$..item')[0];
+                items = jsonQuery.query(result, '$..item').sort(compareAlphabetically);
             }
 
             res.render('actors', {
@@ -45,21 +45,21 @@ router.get('/:id', function (req, res, next) {
                 item = items[parseInt(req.params.id)];
             }
 
-            const profilePicture = item['media:content'][0].$.url;
+            const profilePicture = item['media:content'][0].$.url + '?quality=100&strip=info&w=500';
             const $ = cheerio.load(item['content:encoded'][0]);
-            const filmTable = $.html('table#filmTable');
-            const theatreTable = $.html('table#theatreTable');
             const profileDetails = $.html('div#profileDetails');
-            const training = $.html('div#training');
+            const stageTable = $.html('table#stageTable');
+            const filmTable = $.html('table#filmTable');
+            const tvTable = $.html('table#tvTable');
 
             res.render('actor', {
                 title: item.category[0].charAt(0).toUpperCase() + item.category[0].slice(1) + ' Actors',
                 item: item,
                 profilePicture: profilePicture,
                 profileDetails: profileDetails,
+                stageTable: stageTable,
                 filmTable: filmTable,
-                theatreTable: theatreTable,
-                training: training,
+                tvTable: tvTable,
             });
         });
     });

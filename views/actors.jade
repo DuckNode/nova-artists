@@ -6,7 +6,9 @@ block content
     div#gallery.row
       each item,i in items
           .col-xs-6.col-sm-3.col-md-2.col-lg-2
-            a(href="/actors/"+i+"?category="+category style="text-decoration: none;")
-              img(src=item['media:content'][0].$.url).img-responsive.img-max.img-corners-round
+            a(href='/actors/'+i+'?category='+category style='text-decoration: none;')
+              div(style="background-size:cover; background-image: url('"+item['media:content'][0].$.url+"?quality=100&strip=info&w=400'); background-repeat: no-repeat; background-position: center center;").img-responsive
+                img(src='/img/placeholder.jpg' style="opacity: 0;").img-responsive.img-max.img-corners-round              
+              //- img(src=item['media:content'][0].$.url+'?quality=100&strip=info&w=400').img-responsive.img-max.img-corners-round
               div.desc= item.title
   
