@@ -153,8 +153,18 @@ footer {
   position: relative;
   height: 100vh;
   z-index: -2;
-  background: url(../img/film-reels.jpg) center top/cover no-repeat;
+  
 }
+.hero.background1 {
+   background: url(../img/img1.jpg) center top/cover no-repeat;
+}
+.hero.background2 {
+   background: url(../img/img2.jpg) center top/cover no-repeat;
+}
+.hero.background3 {
+   background: url(../img/img3.jpg) center top/cover no-repeat;
+}
+
 .heroContact {
   position: relative;
   height: 20vh;
