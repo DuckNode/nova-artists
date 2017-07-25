@@ -155,6 +155,12 @@ footer {
   z-index: -2;
   background: url(../img/film-reels.jpg) center top/cover no-repeat;
 }
+.heroContact {
+  position: relative;
+  height: 20vh;
+  z-index: -200;
+  background: url(../img/contactus.jpg) center top/cover no-repeat;
+}
 .overlay {
   position: absolute;
   z-index: -1;
