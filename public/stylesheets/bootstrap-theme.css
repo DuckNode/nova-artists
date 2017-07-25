@@ -37,12 +37,12 @@ nav .row {
 }
 
 div.desc {
-  padding: 10px 25px 8px 25px;
+  padding: 10px 0px 8px 0px;
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
   font-size: 12px;
   font-weight: bold;
-  line-height: 15px;
+  /* line-height: 15px; */
   color:#a8abad;
   text-align: center;
   background-color: #1d1e1f;
