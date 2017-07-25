@@ -180,6 +180,16 @@ footer {
   }
 }
 
+.navbar__spacer--sm {
+    height: 85px;
+  }
+
+@media only screen and (min-width: 768px) {
+  .navbar__spacer--sm {
+    height: 80px;
+  }
+}
+
 .margin__top--none {
   margin-top: 10px;
 }
@@ -195,8 +205,12 @@ footer {
   white-space: normal;
 }
 
+table#stageTable.dataTable.dtr-inline.collapsed > tbody > tr > td:first-child:before,
+table#stageTable.dataTable.dtr-inline.collapsed > tbody > tr > th:first-child:before,
 table#filmTable.dataTable.dtr-inline.collapsed > tbody > tr > td:first-child:before,
-table#filmTable.dataTable.dtr-inline.collapsed > tbody > tr > th:first-child:before {
+table#filmTable.dataTable.dtr-inline.collapsed > tbody > tr > th:first-child:before,
+table#tvTable.dataTable.dtr-inline.collapsed > tbody > tr > td:first-child:before,
+table#tvTable.dataTable.dtr-inline.collapsed > tbody > tr > th:first-child:before {
   font-family: "Glyphicons Halflings"; 
   content: "\2b";
   top: 11px;
@@ -205,8 +219,12 @@ table#filmTable.dataTable.dtr-inline.collapsed > tbody > tr > th:first-child:bef
   background-color: transparent;
   box-shadow: none;
 }
+table#stageTable.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before,
+table#stageTable.dataTable.dtr-inline.collapsed > tbody > tr.parent > th:first-child:before,
 table#filmTable.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before,
-table#filmTable.dataTable.dtr-inline.collapsed > tbody > tr.parent > th:first-child:before {
+table#filmTable.dataTable.dtr-inline.collapsed > tbody > tr.parent > th:first-child:before,
+table#tvTable.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before,
+table#tvTable.dataTable.dtr-inline.collapsed > tbody > tr.parent > th:first-child:before {
   content: "\2212";
   background-color: transparent;
 }

@@ -60,6 +60,7 @@ router.get('/:id', function (req, res, next) {
                 stageTable: stageTable,
                 filmTable: filmTable,
                 tvTable: tvTable,
+                category: req.query.category
             });
         });
     });

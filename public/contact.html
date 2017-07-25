@@ -32,24 +32,18 @@
     <!-- available colors: primary | secondary | white | ghost-->
     <!-- available sizes: xl | lg | md | sm-->
     <!-- the bootstrap navbar-->
-    <nav class="navbar navbar-fixed-top navbar--color--ghost navbar--size--xl" data-startColor="navbar--color--ghost" data-startSize="navbar--size--xl"
-        data-intoColor="navbar--color--secondary" data-intoSize="navbar--size--md">
+    <nav class="navbar navbar-fixed-top navbar--color--secondary navbar--size--md">
         <div class="container-fluid">
             <div class="navbar-header" style="width: 100% !important;">
-                <button type="button" id="menu-button" class="navbar-toggle collapsed hide" data-toggle="collapse" data-target="#menu">
+                <button type="button" id="menu-button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu">
                     <span class="sr-only">Toggle navigation</span>
                     <div class="btn btn-primary">Menu</div>
                 </button>
                 <div class="row">
                     <div class="col-xs-6 col-sm-3">
-                        <img ID="logo" class="logo--lg" alt="logo" src="/img/Nova.png" />
+                        <img ID="logo" class="logo--sm" alt="logo" src="/img/Nova.png" />
                     </div>
-                    <!-- <div class="col-xs-12 col-sm-9" style="">
-                        <div class="navbar--autoScroll navbar__spacer" style="text-align: right; padding: 35px 50px;">
-                            Enter
-                        </div>
-                    </div>  -->
-                    <div id="menu" class="col-xs-12 col-sm-9 collapse navbar-collapse hide" style="padding-top:10px; overflow-x: hidden;">
+                    <div id="menu" class="col-xs-12 col-sm-9 collapse navbar-collapse" style="padding-top:10px; overflow-x: hidden;">
                         <ul class="nav navbar-nav">
                             <li><a href="/index.html" >About</a></li>
                             <li><a href="/actors?category=male">Male Actors</a></li>
@@ -62,6 +56,7 @@
             </div>
         </div>
     </nav>
+    <div class="navbar__spacer--sm"></div>
 
     <div class="heroContact">
         <div class="overlay">
@@ -100,7 +95,7 @@
         <div class="row">
             <div class="hidden-xs hidden-sm">
                  <div id="EmailDesktop" class="col-md-4 col-lg-4">
-                     <h2>To contact the us via email</h2>
+                     <h2 style="margin-top:0;">To contact the us via email</h2>
                      <h4>General Enquires : info@novaartists.co.uk</h4>
                                           
                      <h3>or alternatively call on</h3>
@@ -177,7 +172,6 @@
                 crossorigin="anonymous"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
                 crossorigin="anonymous"></script>
-            <script src="javascripts/nav.js"></script>
         </div>
     </footer>
 </body>
