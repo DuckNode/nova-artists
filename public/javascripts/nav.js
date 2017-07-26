@@ -21,7 +21,7 @@ function switchInto() {
   navBar.addClass(data.intosize);
   logo.removeClass('logo--lg');
   logo.addClass('logo--sm');
-  console.log("into transition triggered!");
+  
 }
 
 // transition Start
@@ -35,7 +35,7 @@ function switchStart() {
   navBar.removeClass(data.intosize);
   logo.removeClass('logo--sm');
   logo.addClass('logo--lg');
-  console.log("start transition triggered!");
+
 }
 
 // set `scrolling` to true when user scrolls

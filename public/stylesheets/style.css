@@ -164,6 +164,9 @@ footer {
 .hero.background3 {
    background: url(../img/img3.jpg) center top/cover no-repeat;
 }
+.hero.background4 {
+   background: url(../img/img4.jpg) center top/cover no-repeat;
+}
 
 .heroContact {
   position: relative;
