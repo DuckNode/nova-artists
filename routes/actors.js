@@ -6,11 +6,24 @@ const convertXMLtoJSON = require('xml2js').parseString;
 const jsonQuery = require('jsonpath');
 const cheerio = require('cheerio');
 
+const winston = require('winston');
+winston.add(winston.transports.File, { filename: 'application_log.log' });
+winston.remove(winston.transports.Console);
+
+winston.info('logging started');
+winston.info('logging working');
+
 router.get('/', function (req, res, next) {
     getRSSFeed.concat('https://novaartistsblog.wordpress.com/feed/', function (err, resp, data) {
-        if (err) throw err;
+        if (err) {
+            winston.error('getRSSFeed.concat %j', { err });
+            throw err;
+        }
         convertXMLtoJSON(data, function (err, result) {
-            if (err) throw err;
+            if (err) {
+                winston.error('convertXMLtoJSON %j', { err });
+                throw err;
+            }
 
             let items;
             if (req.query.category) {
@@ -31,9 +44,15 @@ router.get('/', function (req, res, next) {
 
 router.get('/:id', function (req, res, next) {
     getRSSFeed.concat('https://novaartistsblog.wordpress.com/feed/', function (err, resp, data) {
-        if (err) throw err;
+        if (err) {
+            winston.error('getRSSFeed.concat %j', { err });
+            throw err;
+        }
         convertXMLtoJSON(data, function (err, rssToJsonResult) {
-            if (err) throw err;
+            if (err) {
+                winston.error('convertXMLtoJSON %j', { err });
+                throw err;
+            }
 
             let item;
             if (req.query.category) {

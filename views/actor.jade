@@ -2,11 +2,9 @@ extends layout
 
 block content
   
-  //- link(rel="stylesheet", type="text/css", href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css")
-  //- link(rel="stylesheet", type="text/css", href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css")
-  link(rel="stylesheet", type="text/css", href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.css")
-  link(rel="stylesheet", type="text/css", href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.css")
-
+  link(rel="stylesheet", type="text/css", href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css")
+  link(rel="stylesheet", type="text/css", href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css")
+ 
   style.
     .leftPadding--none li {
       padding-left: 10px !important;
@@ -40,10 +38,7 @@ block content
         !{tvTable}
 
   script(type="text/javascript", src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.js")
-  //- script(type="text/javascript", src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js")
-  //- script(type="text/javascript", src="https://cdn.datatables.net/responsive/2.1.1/js/dataTables.responsive.min.js")
-  //- script(type="text/javascript", src="https://cdn.datatables.net/responsive/2.1.1/js/responsive.bootstrap.min.js")
-  script(type="text/javascript", src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.js")
-  script(type="text/javascript", src="https://cdn.datatables.net/responsive/2.1.1/js/dataTables.responsive.js")
-  script(type="text/javascript", src="https://cdn.datatables.net/responsive/2.1.1/js/responsive.bootstrap.js")
+  script(type="text/javascript", src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js")
+  script(type="text/javascript", src="https://cdn.datatables.net/responsive/2.1.1/js/dataTables.responsive.min.js")
+  script(type="text/javascript", src="https://cdn.datatables.net/responsive/2.1.1/js/responsive.bootstrap.min.js")
   script(src="/javascripts/actor.js")
