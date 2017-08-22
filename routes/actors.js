@@ -5,31 +5,27 @@ const getRSSFeed = require('simple-get');
 const convertXMLtoJSON = require('xml2js').parseString;
 const jsonQuery = require('jsonpath');
 const cheerio = require('cheerio');
-
 const winston = require('winston');
-winston.add(winston.transports.File, { filename: 'application_log.log' });
-winston.remove(winston.transports.Console);
 
-winston.info('logging started');
-winston.info('logging working');
+winston.info('logging working in actors.js');
 
 router.get('/', function (req, res, next) {
-    getRSSFeed.concat('https://novaartistsblog.wordpress.com/feed/', function (err, resp, data) {
-        if (err) {
-            winston.error('getRSSFeed.concat %j', { err });
-            throw err;
+    getRSSFeed.concat('https://novaartistsblog.wordpress.com/feed/', function (feedError, resp, data) {
+        if (feedError) {
+            winston.error('getRSSFeed.concat %j', { feedError });
+            throw feedError;
         }
-        convertXMLtoJSON(data, function (err, result) {
-            if (err) {
-                winston.error('convertXMLtoJSON %j', { err });
-                throw err;
+        convertXMLtoJSON(data, function (convertError, result) {
+            if (convertError) {
+                winston.error('convertXMLtoJSON %j', { convertError });
+                throw convertError;
             }
 
             let items;
-            if (req.query.category) {
+            if (req.query.category) { // query by category
                 items = jsonQuery.query(result, '$..item[?(@.category=="' + req.query.category + '")]').sort(compareAlphabetically);
             }
-            else {
+            else { // get all items - probably redundant as there is currently only category based search pages
                 items = jsonQuery.query(result, '$..item').sort(compareAlphabetically);
             }
 
@@ -43,23 +39,24 @@ router.get('/', function (req, res, next) {
 });
 
 router.get('/:id', function (req, res, next) {
-    getRSSFeed.concat('https://novaartistsblog.wordpress.com/feed/', function (err, resp, data) {
-        if (err) {
-            winston.error('getRSSFeed.concat %j', { err });
-            throw err;
+    getRSSFeed.concat('https://novaartistsblog.wordpress.com/feed/', function (feedError, resp, data) {
+        if (feedError) {
+            winston.error('getRSSFeed.concat %j', { feedError });
+            throw feedError;
         }
-        convertXMLtoJSON(data, function (err, rssToJsonResult) {
-            if (err) {
-                winston.error('convertXMLtoJSON %j', { err });
-                throw err;
+        convertXMLtoJSON(data, function (convertError, rssToJsonResult) {
+            if (convertError) {
+                winston.error('convertXMLtoJSON %j', { convertError });
+                throw convertError;
             }
 
-            let item;
-            if (req.query.category) {
+            let item; 
+            if (req.query.category) { // need to query by category when finding a single item so we can match the index position clicked on the Male/Female search page.
+                                      // this if..else could be reduced to single query with better search/drill mechanism.
                 const items = jsonQuery.query(rssToJsonResult, '$..item[?(@.category== "' + req.query.category + '")]').sort(compareAlphabetically);
                 item = items[parseInt(req.params.id)];
             }
-            else {
+            else { // probably redundant as there is currently only category based search pages
                 const items = jsonQuery.query(rssToJsonResult, '$..item');
                 item = items[parseInt(req.params.id)];
             }
