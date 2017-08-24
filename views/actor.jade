@@ -5,37 +5,38 @@ block content
   link(rel="stylesheet", type="text/css", href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css")
   link(rel="stylesheet", type="text/css", href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css")
  
-  style.
-    .leftPadding--none li {
-      padding-left: 10px !important;
-    }
   div.br--sm
   .container 
-    a.btn.btn-default(href="/actors?category=" + category, role="button", style="padding: 6px 8px 6px 8px;") 
+    a.btn.btn-default.btn--back(href="/actors?category=" + category, role="button") 
       span.glyphicon.glyphicon-chevron-left(aria-hidden="true")
       |  Back
     div.br--sm
     div.row
       div.col-sm-5.col-md-4
-        img(src=profilePicture style="width:100%;")
+        img.maxWidth(src=profilePicture)
       div.col-sm-6.col-md-5
         h1.margin__top--none #{item.title}
         !{profileDetails}
     div.row
-      div(style="text-align: left;").col-xs-12
-        h5(style='padding-top:10.5px;padding-left:5px;padding-bottom:10.5px; margin-bottom:0; background-color:#C7D8C6;')
+      div.col-xs-12
+        h5.stage__title
           strong Stage
         !{stageTable}
     div.row
       div.col-xs-12
-        h5(style='padding-top:10.5px;padding-left:5px;padding-bottom:10.5px; background-color:#A9B7C0;')
+        h5.film__title
           strong Film
         !{filmTable}
     div.row
       div.col-xs-12
-        h5(style='padding-top:10.5px;padding-left:5px;padding-bottom:10.5px; background-color:#CCCBC6;')
+        h5.tv__title
           strong TV
         !{tvTable}
+    div.row
+      div.col-xs-12
+        h5.voice__title
+          strong Voice
+        !{voiceTable}
 
   script(type="text/javascript", src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.js")
   script(type="text/javascript", src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js")

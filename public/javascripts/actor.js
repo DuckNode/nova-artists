@@ -23,4 +23,10 @@ $(document).ready(function () {
         info: false,
         ordering: false
     });
+    $('#voiceTable').DataTable({
+        paging: false,
+        searching: false,
+        info: false,
+        ordering: false
+    });
 });

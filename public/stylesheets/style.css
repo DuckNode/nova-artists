@@ -1,65 +1,22 @@
 html {
     overflow-y: scroll; 
 }
+
 body {
     overflow-x: hidden;
     font-family: 'Ubuntu', sans-serif;
     margin: 0;
     text-align: justify;
 }
+
 h1{
     font-family: 'Ubuntu', sans-serif;
     font-size: 21pt;
     font-weight: 600;
 }
 
-.twitterFeed {
-  margin-top: 11px;
-}
-
-/* @media only screen and (max-width: 768px) {
-  .twitterFeed {
-    border-top: 1px solid rgba(15, 70, 100, 0.12);
-  }
-} */
-
-.timeline-Header {
-  padding-left: 0px;
-}
-
 #bodyText{
     padding-bottom: 10%;
-}
-
-.socialmedia {
-    display: inline-block;
-}
-.socialmedia a {
-  text-decoration: none;
-  cursor: pointer
-}
-.socialmedia img{
-    width: 25px;
-    height: 25px;
-    margin-right: 4px;
-    margin-bottom: 5px;
-}
-
-footer {
-    text-align: center;
-    margin-bottom: 20px;
-}
-#MAMD {
-  font-family: 'Schoolbell', cursive;
-  font-size: 13.9pt;
-  cursor: pointer;
-}
-#MAMD:hover, .hyperlink:hover {
-  text-decoration: none;
-  color: #b53537;
-}
-.footertext{
-  font-size: 10pt;
 }
 
 /*NAVBAR SECTION*/
@@ -67,8 +24,6 @@ footer {
   border: none;
   -webkit-transition: 0.4s;
   transition: 0.4s;
-/* --- navbar sizes --- */
-/* --- navbar colors --- */
 }
 .navbar-brand {
   font-size: 2.25rem;
@@ -98,7 +53,6 @@ footer {
    transition: height 0.4s;
   -webkit-transition: height 0.4s;
 }
-
 .navbar #logo.logo--sm {
   padding-top:10px;
   height: 70px;
@@ -141,30 +95,57 @@ footer {
   font-size: 17pt;
 }
 #menu a {
-  /*color: #00B7FF;*/
   color: #fff;
 }
-
 #menu a.active {
   color: #b53537;
 }
+.navbar__spacer {
+  height: 95px;
+}
 
-.hero {
+@media only screen and (min-width: 768px) {
+  .navbar__spacer {
+    height: 90px;
+  }
+}
+
+.navbar__spacer--sm {
+  height: 85px;
+}
+
+@media only screen and (min-width: 768px) {
+  .navbar__spacer--sm {
+    height: 80px;
+  }
+}
+
+.margin__top--none {
+  margin-top: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+  .margin__top--none {
+    margin-top: 0;
+  }
+}
+
+/* image management */
+.randomImage {
   position: relative;
   height: 100vh;
   z-index: -2;
-  
 }
-.hero.background1 {
+.randomImage.background1 {
    background: url(../img/img1.jpg) center top/cover no-repeat;
 }
-.hero.background2 {
+.randomImage.background2 {
    background: url(../img/img2.jpg) center top/cover no-repeat;
 }
-.hero.background3 {
+.randomImage.background3 {
    background: url(../img/img3.jpg) center top/cover no-repeat;
 }
-.hero.background4 {
+.randomImage.background4 {
    background: url(../img/img4.jpg) center top/cover no-repeat;
 }
 
@@ -183,36 +164,6 @@ footer {
   width: 100%;
 }
 
-.navbar__spacer {
-    height: 95px;
-  }
-
-@media only screen and (min-width: 768px) {
-  .navbar__spacer {
-    height: 90px;
-  }
-}
-
-.navbar__spacer--sm {
-    height: 85px;
-  }
-
-@media only screen and (min-width: 768px) {
-  .navbar__spacer--sm {
-    height: 80px;
-  }
-}
-
-.margin__top--none {
-  margin-top: 10px;
-}
-
-@media only screen and (min-width: 768px) {
-  .margin__top--none {
-    margin-top: 0;
-  }
-}
-
 /* wrap text in datatables responsive child rows  */
 #filmTable .child * {
   white-space: normal;
@@ -223,7 +174,9 @@ table#stageTable.dataTable.dtr-inline.collapsed > tbody > tr > th:first-child:be
 table#filmTable.dataTable.dtr-inline.collapsed > tbody > tr > td:first-child:before,
 table#filmTable.dataTable.dtr-inline.collapsed > tbody > tr > th:first-child:before,
 table#tvTable.dataTable.dtr-inline.collapsed > tbody > tr > td:first-child:before,
-table#tvTable.dataTable.dtr-inline.collapsed > tbody > tr > th:first-child:before {
+table#tvTable.dataTable.dtr-inline.collapsed > tbody > tr > th:first-child:before ,
+table#voiceTable.dataTable.dtr-inline.collapsed > tbody > tr > td:first-child:before,
+table#voiceTable.dataTable.dtr-inline.collapsed > tbody > tr > th:first-child:before {
   font-family: "Glyphicons Halflings"; 
   content: "\2b";
   top: 11px;
@@ -237,11 +190,105 @@ table#stageTable.dataTable.dtr-inline.collapsed > tbody > tr.parent > th:first-c
 table#filmTable.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before,
 table#filmTable.dataTable.dtr-inline.collapsed > tbody > tr.parent > th:first-child:before,
 table#tvTable.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before,
-table#tvTable.dataTable.dtr-inline.collapsed > tbody > tr.parent > th:first-child:before {
+table#tvTable.dataTable.dtr-inline.collapsed > tbody > tr.parent > th:first-child:before,
+table#voiceTable.dataTable.dtr-inline.collapsed > tbody > tr.parent > td:first-child:before,
+table#voiceTable.dataTable.dtr-inline.collapsed > tbody > tr.parent > th:first-child:before {
   content: "\2212";
   background-color: transparent;
 }
 
+/* footer styles  */
+.socialmedia {
+    display: inline-block;
+}
+.socialmedia a {
+  text-decoration: none;
+  cursor: pointer
+}
+.socialmedia img{
+    width: 25px;
+    height: 25px;
+    margin-right: 4px;
+    margin-bottom: 5px;
+}
+
+footer {
+    text-align: center;
+    margin-bottom: 20px;
+}
+#MAMD {
+  font-family: 'Schoolbell', cursive;
+  font-size: 13.9pt;
+  cursor: pointer;
+}
+#MAMD:hover, .hyperlink:hover {
+  text-decoration: none;
+  color: #b53537;
+}
+.footertext{
+  font-size: 10pt;
+}
+
+/* misc */
 .br--sm {
   height: 12px;
+}
+
+.twitterFeed {
+  margin-top: 11px;
+}
+/* @media only screen and (max-width: 768px) {
+  .twitterFeed {
+    border-top: 1px solid rgba(15, 70, 100, 0.12);
+  }
+} */
+.timeline-Header {
+  padding-left: 0px;
+}
+
+.btn--back {
+  padding: 6px 8px 6px 8px;
+}
+
+.text--left {
+  text-align: left;
+}
+
+.stage__title {
+  padding-top:10.5px;
+  padding-left:5px;
+  padding-bottom:10.5px; 
+  margin-bottom:0; 
+  background-color:#C7D8C6;
+}
+.film__title {
+  padding-top:10.5px;
+  padding-left:5px;
+  padding-bottom:10.5px; 
+  background-color:#A9B7C0;
+}
+.tv__title {
+  padding-top:10.5px;
+  padding-left:5px;
+  padding-bottom:10.5px; 
+  background-color:#CCCBC6;
+}
+.voice__title {
+  padding-top:10.5px;
+  padding-left:5px;
+  padding-bottom:10.5px; 
+  background-color:#CCCBC6;
+}
+
+.maxWidth {
+   width:100%;
+}
+
+#menu {
+  padding-top: 10px; 
+  overflow-x: hidden;
+}
+
+.margin__top--none {
+  margin-top:0;
 }

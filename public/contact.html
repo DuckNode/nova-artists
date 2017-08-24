@@ -10,32 +10,32 @@
     <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
     <!--prevent mobile zooming, feels more like native app-->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">-->
     <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cosmo/bootstrap.min.css" rel="stylesheet" integrity="sha384-h21C2fcDk/eFsW9sC9h0dhokq5pDinLNklTKoxIZRUn3+hvmgQSffLLQ4G4l2eEr"
         crossorigin="anonymous">
     <link href="/stylesheets/bootstrap-theme.css" rel="stylesheet">
     <link href="/stylesheets/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Schoolbell|Ubuntu" rel="stylesheet">
-    <link href="/stylesheets/sticky-footer.css" rel="stylesheet">    
-    
+    <link href="/stylesheets/sticky-footer.css" rel="stylesheet">
+
 </head>
 
 <body>
     <div id="fb-root"></div>
-    <script>(function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.10";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.10";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
     <!-- available colors: primary | secondary | white | ghost-->
     <!-- available sizes: xl | lg | md | sm-->
     <!-- the bootstrap navbar-->
     <nav class="navbar navbar-fixed-top navbar--color--secondary navbar--size--md">
         <div class="container-fluid">
-            <div class="navbar-header" style="width: 100% !important;">
+            <div class="navbar-header maxWidth">
                 <button type="button" id="menu-button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu">
                     <span class="sr-only">Toggle navigation</span>
                     <div class="btn btn-primary">Menu</div>
@@ -44,9 +44,9 @@
                     <div class="col-xs-6 col-sm-3">
                         <img ID="logo" class="logo--sm" alt="logo" src="/img/Nova.png" />
                     </div>
-                    <div id="menu" class="col-xs-12 col-sm-9 collapse navbar-collapse" style="padding-top:10px; overflow-x: hidden;">
+                    <div id="menu" class="col-xs-12 col-sm-9 collapse navbar-collapse">
                         <ul class="nav navbar-nav">
-                            <li><a href="/index.html" >About</a></li>
+                            <li><a href="/index.html">About</a></li>
                             <li><a href="/actors?category=male">Male Actors</a></li>
                             <li><a href="/actors?category=female">Female Actors</a></li>
                             <li><a href="/" class="active">Contact</a></li>
@@ -68,47 +68,55 @@
         <div class="row">
             <div class="visible-xs visible-sm" align="center">
                 <div id="EmailMobile" class="col-xs-12">
-                     <h1>To contact the us via email</h1>
-                     <h4>General Enquires : info@novaartists.co.uk</h4>
-                     <h3>or alternatively call on</h3>
-                     <h4> +44 (7522) 963452 </h4>
-                     <br/>
-                     <h4>Make sure to check out our social media for our latest updates.</h4>
-                </div>
-                <div  id="facebookMobile"class="col-xs-12" align="center">
+                    <h1>To contact the us via email</h1>
+                    <h4>General Enquires : info@novaartists.co.uk</h4>
+                    <h3>or alternatively call on</h3>
+                    <h4> +44 (7522) 963452 </h4>
                     <br/>
-                    <div align="center" class="fb-like" data-href="https://www.facebook.com/novaartists" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div>
+                    <h4>Make sure to check out our social media for our latest updates.</h4>
                 </div>
-                
-                <div  id="twitterMobile"class="col-xs-12">
+                <div id="facebookMobile" class="col-xs-12" align="center">
                     <br/>
-                    <a href="https://twitter.com/novaartists" class="twitter-follow-button" data-show-count="false">Follow @novaartists</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-                    <a href="https://twitter.com/intent/tweet?screen_name=novaartists" class="twitter-mention-button" data-show-count="false">Tweet to @novaartists</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    <div align="center" class="fb-like" data-href="https://www.facebook.com/novaartists" data-layout="button_count" data-action="like"
+                        data-size="small" data-show-faces="false" data-share="true"></div>
+                </div>
+
+                <div id="twitterMobile" class="col-xs-12">
+                    <br/>
+                    <a href="https://twitter.com/novaartists" class="twitter-follow-button" data-show-count="false">Follow @novaartists</a>
+                    <script
+                        async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                        <a href="https://twitter.com/intent/tweet?screen_name=novaartists" class="twitter-mention-button" data-show-count="false">Tweet to @novaartists</a>
+                        <script
+                            async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="hidden-xs hidden-sm">
-                 <div id="EmailDesktop" class="col-md-4 col-lg-4">
-                     <h2 style="margin-top:0;">To contact the us via email</h2>
-                     <h4>General Enquires : info@novaartists.co.uk</h4>
-                     <h3>or alternatively call on</h3>
-                     <h4> +44 (7522) 963452 </h4>
+                <div id="EmailDesktop" class="col-md-4 col-lg-4">
+                    <h2 class="margin__top--none">To contact us via email</h2>
+                    <h4>General Enquires : info@novaartists.co.uk</h4>
+                    <h3>or alternatively call on</h3>
+                    <h4> +44 (7522) 963452 </h4>
                 </div>
                 <div align="center">
-                           <h3>Make sure to check out our social media for our latest updates.</h3>
+                    <h3>Make sure to check out our social media for our latest updates.</h3>
                     <br/>
-                <div id="facebookDesktop" class="col-md-4 col-lg-4">
-                    <div class="fb-page" data-href="https://www.facebook.com/novaartists" data-tabs="timeline" data-height="600px" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true"><blockquote cite="https://www.facebook.com/novaartists" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/novaartists">Nova Artists</a></blockquote></div>
-                </div>
-                <div ID="twitterDesktop" class="col-md-4 twitterFeed col-lg-4">
-                    <a class="twitter-timeline" height = "600px" href="https://twitter.com/nova_artists">Tweets by nova_artists</a>
-                    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-                </div>
+                    <div id="facebookDesktop" class="col-md-4 col-lg-4">
+                        <div class="fb-page" data-href="https://www.facebook.com/novaartists" data-tabs="timeline" data-height="600px" data-small-header="true"
+                            data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true">
+                            <blockquote cite="https://www.facebook.com/novaartists" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/novaartists">Nova Artists</a></blockquote>
+                        </div>
+                    </div>
+                    <div ID="twitterDesktop" class="col-md-4 twitterFeed col-lg-4">
+                        <a class="twitter-timeline" height="600px" href="https://twitter.com/nova_artists">Tweets by nova_artists</a>
+                        <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>      
+    </div>
     <footer class="footer">
         <div class="container">
             <div class="br--sm"></div>
@@ -130,28 +138,28 @@
                         </a>
                         </div>
                     </div>
-                <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4">
-                    <p class="footertext">Lovingly created by <a ID="MAMD">me and my Duck &copy;</a> Design</p>
+                    <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4">
+                        <p class="footertext">Lovingly created by <a ID="MAMD">me and my Duck &copy;</a> Design</p>
+                    </div>
                 </div>
-            </div>
             </div>
             <div class="visible-xs visible-sm visible-md">
                 <div class="col-xs-12 col-sm-12 col-md-12">
-                        <div class="socialmedia">
-                            <a>
+                    <div class="socialmedia">
+                        <a>
                             <img alt="Facebook" src="./img/Facebook.png"/>
                         </a>
-                            <a>
+                        <a>
                             <img alt="Twitter" src="./img/Twitter.png" href="https://twitter.com/nova_artists"/>
                         </a>
-                            <a>
+                        <a>
                             <img alt="Instagram" src="./img/Instagram.png"/>
                         </a>
-                            <a>
+                        <a>
                             <img alt="Snapchat" src="./img/Snapchat.png"/>
                         </a>
-                        </div>
                     </div>
+                </div>
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
                     <br/>
                     <p class="footertext">Lovingly created by <a ID="MAMD">me and my Duck &copy;</a> Design</p>
@@ -164,4 +172,5 @@
         </div>
     </footer>
 </body>
+
 </html>

@@ -21,7 +21,6 @@ function switchInto() {
   navBar.addClass(data.intosize);
   logo.removeClass('logo--lg');
   logo.addClass('logo--sm');
-  
 }
 
 // transition Start
@@ -35,7 +34,6 @@ function switchStart() {
   navBar.removeClass(data.intosize);
   logo.removeClass('logo--sm');
   logo.addClass('logo--lg');
-
 }
 
 // set `scrolling` to true when user scrolls

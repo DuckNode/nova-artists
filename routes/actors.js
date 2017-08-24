@@ -67,6 +67,7 @@ router.get('/:id', function (req, res, next) {
             const stageTable = $.html('table#stageTable');
             const filmTable = $.html('table#filmTable');
             const tvTable = $.html('table#tvTable');
+            const voiceTable = $.html('table#voiceTable');
 
             res.render('actor', {
                 title: item.category[0].charAt(0).toUpperCase() + item.category[0].slice(1) + ' Actors',
@@ -76,6 +77,7 @@ router.get('/:id', function (req, res, next) {
                 stageTable: stageTable,
                 filmTable: filmTable,
                 tvTable: tvTable,
+                voiceTable: voiceTable,
                 category: req.query.category
             });
         });
