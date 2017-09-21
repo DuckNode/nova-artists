@@ -6,11 +6,9 @@ const convertXMLtoJSON = require('xml2js').parseString;
 const jsonQuery = require('jsonpath');
 const cheerio = require('cheerio');
 const winston = require('winston');
-console.log('starting');
 winston.info('logging working in actors.js');
 
 router.get('/', function (req, res, next) {
-    console.log('starting2');
     getRSSFeed.concat('https://novaartistsblog.wordpress.com/feed/', function (feedError, resp, data) {
         if (feedError) {
             winston.error('getRSSFeed.concat %j', { feedError });
