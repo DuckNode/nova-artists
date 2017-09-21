@@ -21,22 +21,54 @@ block content
       div.col-xs-12
         h5.stage__title
           strong Stage
-        !{stageTable}
+        table#stageTable.table.table-striped.dt-responsive.nowrap(width="100%" cellspacing="0")
+          thead
+            tr
+              th Production
+              th Role
+              th Director
+              th Company
+          tbody
+            !{stageTable}
     div.row
       div.col-xs-12
         h5.film__title
           strong Film
-        !{filmTable}
+        table#filmTable.table.table-striped.dt-responsive.nowrap(width="100%" cellspacing="0")
+          thead
+            tr
+              th Production
+              th Role
+              th Director
+              th Company
+          tbody
+            !{filmTable}
     div.row
       div.col-xs-12
         h5.tv__title
           strong TV
-        !{tvTable}
+        table#tvTable.table.table-striped.dt-responsive.nowrap(width="100%" cellspacing="0")
+          thead
+            tr
+              th Production
+              th Role
+              th Director
+              th Company
+          tbody
+            !{tvTable}
     div.row
       div.col-xs-12
         h5.voice__title
-          strong Voice
-        !{voiceTable}
+          strong Voice/Other
+        table#voiceTable.table.table-striped.dt-responsive.nowrap(width="100%" cellspacing="0")
+          thead
+            tr
+              th Production
+              th Role
+              th Director
+              th Company
+          tbody
+            !{voiceTable}
 
   script(type="text/javascript", src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.js")
   script(type="text/javascript", src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js")

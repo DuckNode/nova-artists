@@ -6,10 +6,11 @@ const convertXMLtoJSON = require('xml2js').parseString;
 const jsonQuery = require('jsonpath');
 const cheerio = require('cheerio');
 const winston = require('winston');
-
+console.log('starting');
 winston.info('logging working in actors.js');
 
 router.get('/', function (req, res, next) {
+    console.log('starting2');
     getRSSFeed.concat('https://novaartistsblog.wordpress.com/feed/', function (feedError, resp, data) {
         if (feedError) {
             winston.error('getRSSFeed.concat %j', { feedError });
@@ -50,9 +51,9 @@ router.get('/:id', function (req, res, next) {
                 throw convertError;
             }
 
-            let item; 
+            let item;
             if (req.query.category) { // need to query by category when finding a single item so we can match the index position clicked on the Male/Female search page.
-                                      // this if..else could be reduced to single query with better search/drill mechanism.
+                // this if..else could be reduced to single query with better search/drill mechanism.
                 const items = jsonQuery.query(rssToJsonResult, '$..item[?(@.category== "' + req.query.category + '")]').sort(compareAlphabetically);
                 item = items[parseInt(req.params.id)];
             }
@@ -64,10 +65,10 @@ router.get('/:id', function (req, res, next) {
             const profilePicture = item['media:content'][0].$.url + '?quality=100&strip=info&w=500';
             const $ = cheerio.load(item['content:encoded'][0]);
             const profileDetails = $.html('div#profileDetails');
-            const stageTable = $.html('table#stageTable');
-            const filmTable = $.html('table#filmTable');
-            const tvTable = $.html('table#tvTable');
-            const voiceTable = $.html('table#voiceTable');
+            const stageTable = ($('table#stageTable tbody').html() || '').replace(/(>&#xA0;)/g, '>'); // ..||'') means ..if null then ''
+            const filmTable = ($('table#filmTable tbody').html() || '').replace(/(>&#xA0;)/g, '>'); // regex removes any unwanted $nbsp; tag prefixing cells
+            const tvTable = ($('table#tvTable tbody').html() || '').replace(/(>&#xA0;)/g, '>');
+            const voiceTable = ($('table#voiceTable tbody').html() || '').replace(/(>&#xA0;)/g, '>');
 
             res.render('actor', {
                 title: item.category[0].charAt(0).toUpperCase() + item.category[0].slice(1) + ' Actors',
