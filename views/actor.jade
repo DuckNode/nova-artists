@@ -10,13 +10,24 @@ block content
     a.btn.btn-default.btn--back(href="/actors?category=" + category, role="button") 
       span.glyphicon.glyphicon-chevron-left(aria-hidden="true")
       |  Back
+    &nbsp;
+    a.btn.btn-default.btn--back(href="http://www.bbc.co.uk", role="button") 
+      span.glyphicon.glyphicon-film(aria-hidden="true")
+      |  &nbsp; Film Reel
     div.br--sm
     div.row
       div.col-sm-5.col-md-4
         img.maxWidth(src=profilePicture)
       div.col-sm-6.col-md-5
         h1.margin__top--none #{item.title}
-        !{profileDetails}
+        !{profileDetails}   
+        br
+        a.btn.btn-default.btn--back(href="http://www.bbc.co.uk", role="button") 
+          span.glyphicon.glyphicon-film(aria-hidden="true")
+          |  &nbsp; Film Reel
+      a.btn.btn-default.btn--back(href="http://www.bbc.co.uk", role="button") 
+        span.glyphicon.glyphicon-film(aria-hidden="true")
+        |  &nbsp; Film Reel
     div.row
       div.col-xs-12
         h5.stage__title
