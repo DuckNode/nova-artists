@@ -20,11 +20,15 @@ block content
         h1.margin__top--none #{item.title}
         !{profileDetails}   
         br
-       
-      a.btn.btn-default.btn--back(href="http://www.bbc.co.uk", role="button" style="border-radius: 50%;height:50px;width:50px") 
-        span.glyphicon.glyphicon-film(aria-hidden="true" style="font-size:30px")
-      &nbsp;&nbsp;
-      img(src="/img/spotlight.png" style="height:50px; width:50px")
+
+      div.col-sm-1.col-md-2 
+        if showReel !== "hide"
+          a.btn.btn-default.btn--back(href=showReel, role="button" style="border-radius: 50%;height:50px;width:50px") 
+            span.glyphicon.glyphicon-film(aria-hidden="true" style="font-size:30px")
+          &nbsp;&nbsp;
+        if spotlight !== "hide"
+          a(href=spotlight)
+            img(src="/img/spotlight.png" style="height:50px; width:50px")
     div.row
       div.col-xs-12
         h5.stage__title

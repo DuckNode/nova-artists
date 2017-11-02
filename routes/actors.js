@@ -62,18 +62,24 @@ router.get('/:id', function (req, res, next) {
 
             const profilePicture = item['media:content'][0].$.url + '?quality=100&strip=info&w=500';
             const $ = cheerio.load(item['content:encoded'][0]);
+            const showReelAnchor = $('a#showReel');
+            const showReel = showReelAnchor.html() === 'true' ? showReelAnchor.attr('href') : 'hide';
+            const spotlightAnchor = $('a#spotlight');
+            const spotlight = spotlightAnchor.html() === 'true' ? spotlightAnchor.attr('href') : 'hide';
             const profileDetails = $.html('div#profileDetails');
             const stageTable = ($('table#stageTable tbody').html() || '').replace(/(>&#xA0;)/g, '>'); // ..||'') means ..if null then ''
             const filmTable = ($('table#filmTable tbody').html() || '').replace(/(>&#xA0;)/g, '>'); // regex removes any unwanted $nbsp; tag prefixing cells
             const tvTable = ($('table#tvTable tbody').html() || '').replace(/(>&#xA0;)/g, '>');
             const voiceTable = ($('table#voiceTable tbody').html() || '').replace(/(>&#xA0;)/g, '>');
-
+            
             res.render('actor', {
                 title: item.category[0].charAt(0).toUpperCase() + item.category[0].slice(1) + ' Actors',
                 item: item,
                 profilePicture: profilePicture,
                 profileDetails: profileDetails,
-                stageTable: stageTable,
+                showReel: showReel,
+                spotlight: spotlight,
+                stageTable: stageTable, 
                 filmTable: filmTable,
                 tvTable: tvTable,
                 voiceTable: voiceTable,
